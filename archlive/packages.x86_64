@@ -185,9 +185,11 @@ os-prober
 noto-fonts
 noto-fonts-cjk
 cups
+git
 
 ## AEROS-REPO
 calamares
 ckbcomp
 mkinitcpio-openswap
+yay
 

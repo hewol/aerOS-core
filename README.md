@@ -1,5 +1,5 @@
 # aerOS Core
-aerOS Core is a friendly Arch-based Linux distro built with `archiso` designed for low spec computers.
+aerOS Core is a friendly Arch-based Linux distro built with `archiso` designed for low-spec computers.
 
 ### Benefits to using aerOS:
 - Made by Hewol and our community

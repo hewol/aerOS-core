@@ -23,10 +23,10 @@ mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
 nbd
+pv
 rsync
 squashfs-tools
 syslinux
-pv
 zsh
 
 
@@ -172,6 +172,5 @@ tecla
 plymouth
 
 # additional aerOS apps
-freerdp
 firefox
 realvnc-vnc-viewer

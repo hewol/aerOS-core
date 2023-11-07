@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="aerOS"
+iso_name="aerOS-core"
 iso_label="ARCH_$(date +%Y%m)"
 iso_publisher="Hewol <https://hewol.github.io>"
-iso_application="aerOS Live/Rescue CD"
+iso_application="aerOS Core Live/Rescue CD"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')

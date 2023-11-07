@@ -1,5 +1,5 @@
-NAME="aerOS"
-PRETTY_NAME="aerOS"
+NAME="aerOS-core"
+PRETTY_NAME="aerOS Core"
 ID=arch
 BUILD_ID=v1-early-stage-beta
 HOME_URL="https://hewol.github.io"

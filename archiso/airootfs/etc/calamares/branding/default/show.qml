@@ -28,7 +28,7 @@ Presentation
         Text {
             anchors.horizontalCenter: background.horizontalCenter
             anchors.top: background.bottom
-            text: "Thank you for installing aerOS v1!<br>Please wait..."
+            text: "Thank you for installing aerOS Core v1!<br>Please wait..."
             wrapMode: Text.WordWrap
             width: presentation.width
             horizontalAlignment: Text.Center

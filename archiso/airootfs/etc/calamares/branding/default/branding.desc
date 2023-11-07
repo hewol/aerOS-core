@@ -121,13 +121,13 @@ navigation: widget
 # are visible as buttons there if the corresponding *show* keys
 # are set to "true" (they can also be overridden).
 strings:
-    productName:         "aerOS Linux Distro"
-    shortProductName:    aerOS
+    productName:         "aerOS Core Linux Distro"
+    shortProductName:    aerOS Core
     version:             v1 Beta
     shortVersion:        v1 Beta
-    versionedName:       aerOS Linux Distro v1 Beta "aerOnar"
-    shortVersionedName:  aerOS v1 Beta
-    bootloaderEntryName: aerOS
+    versionedName:       aerOS Core Linux Distro v1 Beta "aerOnar"
+    shortVersionedName:  aerOS Core v1 Beta
+    bootloaderEntryName: aerOS Core
 
 # These images are loaded from the branding module directory.
 #

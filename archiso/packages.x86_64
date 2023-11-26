@@ -28,6 +28,8 @@ rsync
 squashfs-tools
 syslinux
 zsh
+sudo
+htop
 
 
 #######################################################
@@ -73,9 +75,9 @@ networkmanager
 
 ##### xorg applications
 
-#xorg-server
-#xorg-apps
-#neofetch
+xorg-server
+xorg-apps
+neofetch
 
 ##### Drivers for graphical cards
 
@@ -111,11 +113,11 @@ gdm
 
 ##### want to have base-devel group
 
-#base-devel
+base-devel
 
 ##### want to have linux-headers
 
-#linux-headers
+linux-headers
 
 ##### want to have a desktop
 
@@ -163,7 +165,7 @@ tecla
 #timeshift
 #grub-btrfs
 #timeshift-autosnap
-#git
+git
 
 #######################################################
 ###                     aerOS                       ###
@@ -175,3 +177,4 @@ plymouth
 # additional aerOS apps
 firefox
 realvnc-vnc-viewer
+libreoffice

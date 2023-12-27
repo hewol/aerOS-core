@@ -30,8 +30,6 @@ squashfs-tools
 sudo
 syslinux
 zsh
-sudo
-htop
 
 
 #######################################################
@@ -69,7 +67,7 @@ mkinitcpio-openswap
 
 ##### you can also use nmtui from the terminal
 networkmanager
-#network-manager-applet
+network-manager-applet
 
 #######################################################
 ###                    EXTRAS                       ###
@@ -77,9 +75,9 @@ networkmanager
 
 ##### xorg applications
 
-xorg-server
-xorg-apps
-neofetch
+#xorg-server
+#xorg-apps
+#neofetch
 
 ##### Drivers for graphical cards
 
@@ -180,5 +178,6 @@ neofetch
 
 # additional aerOS apps
 firefox
-realvnc-vnc-viewer
 libreoffice
+realvnc-vnc-viewer
+

@@ -123,10 +123,10 @@ navigation: widget
 strings:
     productName:         "aerOS Core Linux Distro"
     shortProductName:    aerOS Core
-    version:             v1 Beta
-    shortVersion:        v1 Beta
-    versionedName:       aerOS Core Linux Distro v1 Beta "aerOnar"
-    shortVersionedName:  aerOS Core v1 Beta
+    version:             v1
+    shortVersion:        v1
+    versionedName:       aerOS Core Linux Distro v1 "aerOnar"
+    shortVersionedName:  aerOS Core v1
     bootloaderEntryName: aerOS Core
 
 # These images are loaded from the branding module directory.

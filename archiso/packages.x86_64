@@ -13,6 +13,7 @@ edk2-shell
 efibootmgr
 grml-zsh-config
 grub
+htop
 intel-ucode
 iwd
 linux
@@ -26,6 +27,7 @@ nbd
 pv
 rsync
 squashfs-tools
+sudo
 syslinux
 zsh
 
@@ -125,6 +127,7 @@ gnome-session
 gnome-settings-daemon
 gnome-shell
 gnome-terminal
+gnome-themes-extra
 gvfs
 mutter
 nautilus
@@ -171,6 +174,7 @@ tecla
 
 # modified packages from aerOS repos
 plymouth
+neofetch
 
 # additional aerOS apps
 firefox

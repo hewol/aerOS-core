@@ -41,28 +41,13 @@ zsh
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
 
-#alci-dwm
-#alci-dwm-nemesis
 alci-calamares
-#alci-calamares-dev
-#alci-calamares-config
-#alci-calamares-config-btrfs
-#alci-calamares-config-dev
-#alci-calamares-config-hardened
-#alci-calamares-config-lts
-#alci-calamares-config-pure
-#alci-calamares-config-xanmod
-#alci-calamares-config-zen
-#xterm
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
 #######################################################
 
 os-prober
-#make
-#xorg-xkill
-#xorg-xrdb
 mkinitcpio-openswap
 
 ##### you can also use nmtui from the terminal
@@ -72,12 +57,6 @@ network-manager-applet
 #######################################################
 ###                    EXTRAS                       ###
 #######################################################
-
-##### xorg applications
-
-#xorg-server
-#xorg-apps
-#neofetch
 
 ##### Drivers for graphical cards
 
@@ -93,23 +72,11 @@ xf86-video-nouveau
 xf86-video-qxl
 xf86-video-vmware
 
+##### want to use proprietary nvidia drivers, replace xf86-video-nouveau
+
 #nvidia
 #nvidia-settings
 #nvidia-utils
-
-##### lightdm display manager
-
-#lightdm
-#lightdm-gtk-greeter
-
-##### sddm display manager
-
-#sddm
-#alci-sddm-plasma-archpaint
-
-##### gdm display manager
-
-gdm
 
 ##### want to have base-devel group
 
@@ -120,6 +87,7 @@ base-devel
 linux-headers
 
 ##### want to have a desktop
+##### installed individually because you cannot defer updates of the gnome group if you install it instead of its members
 
 gnome-color-manager
 gnome-control-center
@@ -133,40 +101,10 @@ mutter
 nautilus
 tecla
 
-##### want to add/use the ArcoLinux repos
-
-#arcolinux-mirrorlist-git
-#arcolinux-keyring
-
-#test
-#arcolinux-wallpapers-git
-
 ##### want to add/use the Chaotic repo
 
 chaotic-mirrorlist
 chaotic-keyring
-
-#test
-#xcursor-sweet
-
-##### want to add/use your local repo packages
-##### create your packages and put them in the local repo
-
-#There is a copy of the local repo in your folder
-#Copy/paste it to your homefolder
-#Change the name erik to your own username
-#update the database
-
-#test
-#nemesis-wallpapers
-
-#### want have a btrfs format
-#### use alci-calamares-config-btrfs 
-
-#timeshift
-#grub-btrfs
-#timeshift-autosnap
-git
 
 #######################################################
 ###                     aerOS                       ###
@@ -180,4 +118,3 @@ neofetch
 firefox
 libreoffice
 realvnc-vnc-viewer
-

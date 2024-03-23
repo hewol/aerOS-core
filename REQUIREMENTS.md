@@ -1,5 +1,5 @@
 # Requirements
-To run aerOS smoothly, you should meet these requirements:
+To run aerOS Core smoothly, you should meet these requirements:
 
 ### Recommended requirements
 * 2 GB or more RAM
@@ -9,8 +9,8 @@ To run aerOS smoothly, you should meet these requirements:
 
 ### Minimum requirements
 * 1 GB or more RAM
-* At least a Pentium 4
+* At least an Intel Pentium 4 or AMD Athlon 64
 * 8 GB or more storage
-* At least an Intel iGPU
+* At least an iGPU
 
 Do you have a better computer? Try out [aerOS Full](https://github.com/hewol/aerOS).<br>

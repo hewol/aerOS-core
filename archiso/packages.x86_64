@@ -89,6 +89,7 @@ linux-headers
 ##### want to have a desktop
 ##### installed individually because you cannot defer updates of the gnome group if you install it instead of its members
 
+gdm
 gnome-color-manager
 gnome-control-center
 gnome-session

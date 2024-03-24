@@ -18,9 +18,9 @@ sed -i "109r boot.option" $ROOT/boot/grub/grub.cfg
 sed -i "127r boot.option" $ROOT/boot/grub/grub.cfg
 
 # Rename the boot options
-sed -i "92s/aerOS Linux/aerOS/g" $ROOT/boot/grub/grub.cfg
-sed -i "110s/aerOS Linux/aerOS with safe graphics driver/g" $ROOT/boot/grub/grub.cfg
-sed -i "128s/aerOS Linux/aerOS in TTY mode/g" $ROOT/boot/grub/grub.cfg
+sed -i "92s/aerOS Core Linux/aerOS Core/g" $ROOT/boot/grub/grub.cfg
+sed -i "110s/aerOS Core Linux/aerOS Core with safe graphics driver/g" $ROOT/boot/grub/grub.cfg
+sed -i "128s/aerOS Core Linux/aerOS Core in TTY mode/g" $ROOT/boot/grub/grub.cfg
 
 # Change kernel parameters for newly created boot options
 sed -i "123s/quiet splash/quiet splash nomodeset/g" $ROOT/boot/grub/grub.cfg

@@ -41,7 +41,8 @@ zsh
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
 
-alci-calamares
+aeros-calamares-config
+calamares-git
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
@@ -59,36 +60,21 @@ network-manager-applet
 #######################################################
 
 ##### Drivers for graphical cards
-
-#driver for virtualbox - xf86-video-vmware is dependency
-#systemctl enable vboxservice
-#systemctl start vboxservice
-#to have fullscreen
-#virtualbox-guest-utils
-
 xf86-video-intel
 xf86-video-amdgpu
 xf86-video-nouveau
 xf86-video-qxl
 xf86-video-vmware
 
-##### want to use proprietary nvidia drivers, replace xf86-video-nouveau
-
-#nvidia
-#nvidia-settings
-#nvidia-utils
 
 ##### want to have base-devel group
-
 base-devel
 
 ##### want to have linux-headers
-
 linux-headers
 
 ##### want to have a desktop
 ##### installed individually because you cannot defer updates of the gnome group if you install it instead of its members
-
 gdm
 gnome-color-manager
 gnome-control-center
@@ -103,7 +89,6 @@ nautilus
 tecla
 
 ##### want to add/use the Chaotic repo
-
 chaotic-mirrorlist
 chaotic-keyring
 
@@ -112,10 +97,13 @@ chaotic-keyring
 #######################################################
 
 # modified packages from aerOS repos
+grub-hook
 plymouth
 neofetch
 
 # additional aerOS apps
 firefox
 libreoffice
+nano
 realvnc-vnc-viewer
+vim

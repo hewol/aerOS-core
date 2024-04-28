@@ -6,13 +6,21 @@ then
     exec sudo /bin/bash "$0" "$@"
 fi
 
+# Check if we are running aerOS
+source /etc/os-release
+if ! [ $ID = "aerOS" ];
+then
+    echo "You are not running aerOS, you cannot upgrade to aerOS from $PRETTY_NAME ($BUILD_ID)".
+    exit 1
+fi
+
+# Check if we have the required packages
+which jq wget pv 2>&1 >/dev/null || ( echo "You do not have the required packages. Install: wget, jq, pv."; exit 1 )
+
 # Download update information
 wget https://raw.githubusercontent.com/hewol/aerOS/master/releases.json -O /tmp/releases.json 2>/dev/null
-wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/os-release -O /tmp/os-release 2>/dev/null
-wget https://raw.githubusercontent.com/hewol/aerOS/master/archiso/airootfs/etc/lsb-release -O /tmp/lsb-release 2>/dev/null
 
 # Get version information
-source /etc/os-release
 CURRENT_VERSION=$BUILD_ID
 LATEST_VERSION=$(jq -r .latest /tmp/releases.json)
 
@@ -20,17 +28,20 @@ echo "aerOS Update Shell Script"
 echo
 
 # Check if updates are available
-if [ "$CURRENT_VERSION" != "$LATEST_VERSION" ]
+if ! [ "$(printf '%s\n' "$CURRENT_VERSION" "$LATEST_VERSION" | sort -V | head -n1)" = "$LATEST_VERSION" ];
 then
     echo "New update! $LATEST_VERSION"
     echo
     CHANGELOG=$(jq -r ".releases.$LATEST_VERSION.changelog.[]" /tmp/releases.json)
     RELEASE_URL=$(jq -r ".releases.$LATEST_VERSION.url" /tmp/releases.json)
+    UPDATE_URL=$(jq -r ".releases.$LATEST_VERSION.package_url" /tmp/releases.json)
+
     echo "Changelog:"
     printf "%s" "$CHANGELOG"
     echo
     echo
     echo "GitHub release: $RELEASE_URL"
+    echo "Update package URL: $UPDATE_URL"
     echo
     echo "Notes":
     echo "Some settings and configurations might be restored back to their default state"
@@ -41,22 +52,32 @@ then
     read -p "Would you like to begin the update? [y/n] " -n 1 -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
+        # If any commands have failed, quit immediately (IF THIS HAPPENED TO YOU, IMMEDIATELY REINSTALL AS YOUR SYSTEM IS NOW UNSTABLE)
+        try() { "$@" || _() { printf "System update failed to install.\nPlease reinstall aerOS immediately as it may not work anymore!\n"; exit 1; }; _ 2>/dev/null; }
         echo
-        cp /tmp/os-release /etc/os-release
-        cp /tmp/lsb-release /etc/lsb-release
-        sudo pacman --config /etc/pacman-update.conf -Syu --noconfirm
-        EXITCODE=$?
-        if [ "$EXITCODE" != "0" ]
+
+        # Get and apply update file
+        try wget "$UPDATE_URL" -O ~/update.tar.gz
+        try pv ~/update.tar.gz | tar --xattrs-include="*.*" --no-same-owner -C / -xpz
+
+        # Reset Pacman package manager
+        try rm -rf /etc/pacman.d/gnupg
+        try pacman-key --init
+        try pacman-key --populate
+        try pacman -Sy
+        try pacman -Scc --noconfirm
+
+        # Force update previously non-updated packages
+        try pacman --config=/etc/pacman-update.conf -Syu --overwrite="*" --noconfirm
+
+        # Clean-up after a finished update
+        try rm -rf ~/update.tar.gz
+
+        echo "System update has been installed, a reboot is required to apply it."
+        read -p "Would you like to reboot? [y/n] " -n 1 -r
+        if [[ $REPLY =~ ^[Yy]$ ]]
         then
-            echo "System update failed to install."
-            exit $EXITCODE
-        else
-            echo "System update has been installed, a reboot is required to apply it."
-            read -p "Would you like to reboot? [y/n] " -n 1 -r
-            if [[ $REPLY =~ ^[Yy]$ ]]
-            then
-                sudo sync ; reboot -f
-            fi
+            sync ; reboot -f
         fi
     fi
 else

@@ -19,7 +19,6 @@ linux-firmware
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
-networkmanager
 nbd
 pv
 rsync

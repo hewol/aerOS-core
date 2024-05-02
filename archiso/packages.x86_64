@@ -7,7 +7,6 @@
 
 amd-ucode
 base
-dhcpcd
 dosfstools
 edk2-shell
 efibootmgr
@@ -15,14 +14,12 @@ grml-zsh-config
 grub
 htop
 intel-ucode
-iwd
 linux
 linux-firmware
-memtest86+
-memtest86+-efi
 mkinitcpio
 mkinitcpio-archiso
 mkinitcpio-nfs-utils
+networkmanager
 nbd
 pv
 rsync
@@ -96,10 +93,33 @@ chaotic-keyring
 ###                     aerOS                       ###
 #######################################################
 
-# modified packages from aerOS repos
+alsa-utils
+cifs-utils
+ckbcomp
+cups
+cups-filters
+cups-pdf
+firefox
+foomatic-db
+foomatic-db-engine
+gimp
+git
+gnome-disk-utility
 grub-hook
-plymouth
+gsfonts
+gutenprint
+jq
+lib32-mesa
+lib32-vulkan-icd-loader
+libreoffice-fresh
+mesa
 neofetch
+noto-fonts
+noto-fonts-cjk
+p7zip
+pavucontrol
+pipewire
+plymouth
 
 # additional aerOS apps
 firefox
